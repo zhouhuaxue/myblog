@@ -1,0 +1,18 @@
+<div class="span4">
+          <div>
+            <h3>热门标签</h3>
+            <ul class="unstyled inline">
+              <volist name="tags" id="tag">
+              <li><a class="label label-info" href="__APP__/Tags/index/tag/<{$tag.tag_name}>"><{$tag.tag_name}></a></li>
+              </volist>
+            </ul>
+          </div>
+          <div>
+            <h3>最新评论</h3>
+             <ul class="unstyled text-center">
+              <volist name="comment_rs" id="comments">
+              <li><a href="__APP__/Index/show/post_id/<{$comments.post_id}>">{<{$comments.title}>}: <{$comments.m_content}></a></li>
+            </volist>
+            </ul>
+          </div>
+</div></div>

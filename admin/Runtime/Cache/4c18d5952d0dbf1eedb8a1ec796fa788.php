@@ -1,0 +1,125 @@
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+    <title>myblog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="__PUBLIC__/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="__PUBLIC__/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+	<script src="__PUBLIC__/bootstrap/js/jquery-1.10.2.min.js"></script>
+    <script src="__PUBLIC__/bootstrap/js/bootstrap.min.js"></script>
+    <!-- bootstrap end -->
+  </head>
+  <body>
+  <!-- <div class="container">
+  <div class="row"> <h3> 运维OA</h3></div>
+  </div> -->
+      <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">myblog</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav pull-right">
+             <!--  <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li> -->
+              <li class="active"><a href="#contact">欢迎您~z_huaxue</a></li>
+              <li><a href="__APP__/Common/logout" target='_parent'><i class='icon-off icon-white'></i>安全退出</a></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+<div class="container"> 
+ <div class="row">
+  <div class="span3 ">
+<div data-spy="affix" data-offset-top="50">
+<!-- 新效果-->
+<div class="accordion span3" id="accordion2">
+  
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        分类管理
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse ">
+      <div class="accordion-inner">
+        <ul class="nav nav-list">
+        <li> <a href="__APP__/Type/index" target="index_center">分类管理</a></li>
+         <li> <a href="__APP__/Type/edit" target="index_center">分类添加</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapsetwo">
+        文章管理
+      </a>
+    </div>
+    <div id="collapsetwo" class="accordion-body collapse ">
+      <div class="accordion-inner">
+        <ul class="nav nav-list">
+        <li> <a href="__APP__/Post/index" target="index_center">文章管理</a></li>
+         <li> <a href="__APP__/Post/edit" target="index_center">文章添加</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseto">
+        评论管理
+      </a>
+    </div>
+    <div id="collapseto" class="accordion-body collapse ">
+      <div class="accordion-inner">
+        <ul class="nav nav-list">
+        <li> <a href="__APP__/Comment/index" target="index_center">评论管理</a></li>
+         
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapset">
+        友链管理
+      </a>
+    </div>
+    <div id="collapset" class="accordion-body collapse ">
+      <div class="accordion-inner">
+        <ul class="nav nav-list">
+        <li> <a href="__APP__/Flinks/index" target="index_center">友链管理</a></li>
+         <li> <a href="__APP__/Flinks/edit" target="index_center">友链添加</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- 新效果结束 -->
+</div>
+</div> 
+ <script>
+ $(function(){
+  $("li a").click(function(){
+  var href=$(this).attr('href');
+  $("iframe").attr('src',href);
+  $(this).parent('li').addClass('active').siblings().removeClass('active');
+  return false;
+    });
+ });
+ </script>
+  <div class="span9 " >
+ <iframe  name="index_center" id="index_center" src="" frameborder="0" width="870"  onload="this.height=index_center.document.body.scrollHeight"></iframe>
+ </div>
+ </div>
+ </div> 
+ </body>
+ </html>

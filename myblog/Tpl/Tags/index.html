@@ -1,0 +1,13 @@
+<layout name="layout"/>
+<div class="span8">
+          <ul class="unstyled">
+            <volist name="post_rs" id="post">
+            <li>
+              <h2> <a href="__APP__/Index/show/post_id/<{$post.post_id}>"><{$post.title}></a></h2>
+              <p class="text-left"><{$post.sn_title}></p>
+              <p class="text-right"><a href="__APP__/Index/show/post_id/<{$post.post_id}>" class="label label-info" >点击查看</a>&nbsp;&nbsp;<em>浏览次数:</em><small class="badge badge badge-important"><{$post.view}></small>&nbsp;&nbsp;<em>评论:</em><small class="badge badge-success"><{$post.view}></small></p>
+              <hr/>
+            </li>
+          </volist>
+          </ul>
+</div>

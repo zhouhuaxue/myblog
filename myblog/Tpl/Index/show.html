@@ -1,0 +1,55 @@
+        <div class="span8">
+
+         <h3 class="text-center"> <{$post_rs.title}></h3>
+         <div class="content">
+            <{$post_rs.content}>
+         </div>
+
+         <div class="text-left">
+          <hr/>
+          <h4> 评论信息：</h4>
+          <ul class="unstyled comments">
+            <volist name="mycomment_rs" id="comment">
+            <li>
+              <p><{$comment.m_content}><p>
+              <p class="text-right"><{$comment.username}> <{$comment.addtime|date='Y-m-d',###}> 评</p>
+               <hr/>
+            </li>
+          </volist>
+          </ul>
+        
+          <h4>添加评论</h4>
+          <form action="__URL__/addcoment/post_id/<{$post_rs.post_id}>" id="comments" method="post">
+            <label for="username">昵称：</label>
+            <input type="text" class="" name="username" id="username"/>
+            <label for=""username>评论内容：</label>
+            <textarea name="m_content" class="span7" rows="6"></textarea>
+            <p ><input value="添加评论" class="btn btn-primary" id="submit" type="submit"/></p>
+          </form>
+          <script type="text/javascript">
+          $(function(){
+            $("#submit").click(function(){
+
+              if($("#username").val()==""){alert("用户昵称不能为空！");return false;}
+              if($('textarea').val()==""){alert("留言信息不能为空!");return false;}
+              var href=$('form').attr('action');
+              $.post(href,{username:$("#username").val(),m_content:$('textarea').val(),time:new Date().getTime()},function(data){
+                if(data.status==1)
+                {
+                  alert(data.msg);
+                  $(".comments").append("<li><p>"+$('textarea').val()+"</p><p class='text-right'>"+$('#username').val()+"</p></li>");
+                  $('textarea').val('');
+                  $('#username').val('');
+                }
+                else
+                {
+                  alert(data.msg);
+                }
+              },'json');
+              return false;
+            });
+          });
+          </script>
+         </div>
+        </div>
+       

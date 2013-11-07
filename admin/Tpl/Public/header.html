@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  <meta charset="utf-8">
+    <title>myblog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Bootstrap -->
+    <link href="<?=base_url()?>/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link href="<?=base_url()?>/bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+    <style>
+      body {
+        padding-top: 60px; /* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+	<script src="<?=base_url()?>/bootstrap/js/jquery-1.10.2.min.js"></script>
+    <script src="<?=base_url()?>/bootstrap/js/bootstrap.min.js"></script>
+    <!-- bootstrap end -->
+  </head>
+  <body>
+  <!-- <div class="container">
+  <div class="row"> <h3> 运维OA</h3></div>
+  </div> -->
+      <div class="navbar navbar-inverse navbar-fixed-top">
+      <div class="navbar-inner">
+        <div class="container">
+          <a class="brand" href="#">myblog</a>
+          <div class="nav-collapse collapse">
+            <ul class="nav pull-right">
+             <!--  <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li> -->
+              <li class="active"><a href="#contact">欢迎您~<?php echo $userinfo['realname'];?></a></li>
+              <li><?php echo anchor("/auth/logout/","<i class='icon-off icon-white'></i>安全退出","target='_parent'");?></li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </div>
+    </div>
+<div class="container"> 
+ <div class="row">
+  <div class="span3 ">
+<div data-spy="affix" data-offset-top="50">
+<!-- 新效果-->
+<div class="accordion span3" id="accordion2">
+  <div class="accordion-group">
+    <div class="accordion-heading">
+    <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapse0">
+        个人中心
+    </a>
+    </div>
+    <div id="collapse0" class="accordion-body collapse">
+    <div class="accordion-inner">
+    <ul class="nav nav-list">
+    <li class="active"> <a href="<?php echo base_url('index.php/index/center')?>">我的个人信息</a></li>
+    <li> <a href="<?php echo base_url('index.php/index/center')?>">我的待办列表</a></li>
+    <li> <a href="<?php echo base_url('index.php/index/center')?>">我的申请信息</a></li>
+    <li> <a href="<?php echo base_url('index.php/index/center')?>">我的历史工单</a></li>
+    </ul>
+    </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseOne">
+        git认证管理
+      </a>
+    </div>
+    <div id="collapseOne" class="accordion-body collapse ">
+      <div class="accordion-inner">
+        <ul class="nav nav-list">
+      <li class="active"><?php echo anchor("/git/gitshowapply/","git认证申请","target=index_center");?></li>
+      <li><?php echo anchor("/git/mygit/","我的git认证","target=index_center");?></li>
+      <li class="divider"></li>
+      <li><?php echo anchor("/gitgroups"," git组添加","target=index_center");?></li>
+      <li><?php echo anchor("/git_creator/alllist","我的git组审批","target=index_center");?></li>
+      <li><?php echo anchor("/gitgroups/alllist"," 我的git组","target=index_center");?></li>
+  </ul>
+      </div>
+    </div>
+  </div>
+  <div class="accordion-group">
+    <div class="accordion-heading">
+      <a class="accordion-toggle" data-toggle="collapse" data-parent="#accordion2" href="#collapseTwo">
+          <i class='icon-user'></i>用户管理
+      </a>
+    </div>
+    <div id="collapseTwo" class="accordion-body collapse">
+      <div class="accordion-inner">
+      <ul class="nav nav-list nav-pills text-center">
+    <li><?php echo anchor("/auth/change_password/","修改密码","target=index_center");?></li>
+    <li><?php echo anchor("/auth/logout/","<i class='icon-off'></i>安全退出");?></li>
+ </ul>
+  </div>
+  </div>
+  </div>
+</div>
+<!-- 新效果结束 -->
+</div>
+</div> 
+ <script>
+ $(function(){
+  $("li a").click(function(){
+  var href=$(this).attr('href');
+  $("iframe").attr('src',href);
+  $(this).parent('li').addClass('active').siblings().removeClass('active');
+  return false;
+    });
+ });
+ </script>
+  <div class="span9 " >
+ <iframe  name="index_center" id="index_center" src="<?php echo base_url('index.php/index/center');?>" frameborder="0" width="870"  onload="this.height=index_center.document.body.scrollHeight"></iframe>
+ </div>
+ </div>
+ </div> 
+ </body>
+ </html>
